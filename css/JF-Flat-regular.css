@@ -1,0 +1,10 @@
+
+@font-face {
+	font-family: 'JF-Flat-regular';
+	src: url('../font/JF-Flat-regular.eot');
+	src: url('../font/JF-Flat-regular.eot?#iefix') format('embedded-opentype'),
+		url('../font/JF-Flat-regular.woff') format('woff'),
+		url('../font/JF-Flat-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>كرم واي فاي | بيانات الإشتراك</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+      <link rel="shortcut icon" href="img/favicon.png" />
+		$(if refresh-timeout)
+	  <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+		$(endif)
+ 	  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	   <link rel="stylesheet" type="text/css" href="css/JF-Flat-regular.css" />
+       <link rel="stylesheet" href="css/icons.css">
+       <link rel="stylesheet" href="css/style.css">
+       
+       <script  src="js/mine.js"></script>
+	   <script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+       </script>
+
+<script>
+ function delrem(){
+  document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    }
+</script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+  <div class="cont">
+  <div class="demo">
+  <div class="login">
+  
+  <!-- Start nav -->	
+
+	<div class="top-nav" >
+				<ul>
+			<li><a data-scroll href="price.html">باقات الإنترنت <span class="icon-stopwatch"></span></a></li>
+			<li><a data-scroll href="sellar.html">نقاط البيع <span class="icon-placepin"></span></a></li>
+
+				</ul>
+	</div>
+<!-- End nav -->  
+ 
+ 
+  <!-- Start Clock -->	
+			<div class="clock" >
+
+				  <div id="clock" dir="rtl" align="center">
+    جارى فتح الساعة......</div>
+				  <script type="text/javascript"> function refrClock() { var d=new Date(); var s=d.getSeconds(); var m=d.getMinutes(); var h=d.getHours(); var day=d.getDay(); var date=d.getDate(); var month=d.getMonth(); var year=d.getFullYear(); var days=new Array("الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"); var months=new Array("01","02","03","04","05","06","07","08","09","10","11","12"); var am_pm; if (s<10) {s="0" + s} if (m<10) {m="0" + m} if (h>12) {h-=12;am_pm = "مساءً  "} else {am_pm="صباحاً  "} if (h<10) {h="0" + h} document.getElementById("clock").innerHTML= "   الساعة الآن :    " + h + ":" + m + ":" + s + " " + am_pm + " - " + days[day] + " " + date + " / " + months[month] + " /" + year; setTimeout("refrClock()",1000); } refrClock(); </script>
+	</div>
+<!-- End Clock -->
+
+ <!-- Start news -->
+	<div class="line " >
+			<div class="box" style="padding: 0px;" >
+
+				  <div class="l-12 s-12"  dir="rtl" align="center"  >
+		 <iframe class="price" src="news.html" style=" border-bottom:dashed 1px #ccc;   padding:5px;" width="100%" height="40px" > </iframe>
+   					</div>
+
+			</div>
+</div>
+<!-- End news -->
+
+
+
+  
+ 
+  <div align="center"><img alt="logo" src="img/logo.png" style="max-width: 90%;" /></div>
+  <div clas="login__form">
+        
+        
+
+		<div class="status">
+			  $(if login-by == 'trial')
+			<br>
+			<div  class="welcomeuser">أهلا بك في الخدمة التجريبية</div>
+			  
+		  $(elif login-by != 'mac')
+
+		<div dir="rtl" class="welcomeuser"><span class="icon-check" style="color: forestgreen;"></span>
+		 أهلا بك : <strong style="color:#00A312">$(username)</strong></div>
+			$(endif)
+
+<div style="background-color: #333; font-size: 25px;">
+		<a href="https://www.google.com/" target="_blank" class="icon-google_plus"></a> 
+		<a href="https://www.facebook.com/" target="_blank" class="icon-facebook_circle"></a> 
+		<a href="https://www.twitter.com/" target="_blank" class="icon-twitter"></a> 
+		<a href="https://www.youtube.com/" target="_blank" class="icon-video_camera"></a>
+		</div>
+			<div class="info-h1 ">معلومات الإشتراك</div>
+			<table class="price "  dir="rtl">
+<!-- -->	$(if blocked == 'yes')
+		     <script language="JavaScript">
+			   					 window.open("$(link-advert)","_self");
+
+		     </script>
+<!-- -->
+			  <tr>
+			  	<td><div align="right">الحالـــة:</div></td>
+				<td><div style="color: #FFFFFF;">
+			<a href="$(link-advert)" target="hotspot_advert" style="color:#FF0000; font-size:16px;">*[ هناك رسالة إدارية ]*</a></div></td>
+				
+			  </tr>
+			  
+			$(elif refresh-timeout)
+			 
+			 $(endif)
+
+			<tr>
+				<td><div align="right">التحميل المستهلك:</div></td>
+				<td >
+				 <script type="text/javascript">
+                  document.write(arabicBytes("$(bytes-out)"));
+                 </script>
+				</td>
+				
+			  </tr>
+
+       		 <tr>
+			 	<td><div align="right">التحميل المتبقي :</div></td>
+				<td>
+               	 $(if remain-bytes-out)             
+                 <script type="text/javascript">
+                 document.write(arabicBytes("$(remain-bytes-out)"));
+                 </script>
+                  $(else)
+                            
+                  غير محدود
+
+			      $(endif)
+
+				</td>
+			  </tr>
+			  
+			  
+			<tr>  
+				<td><div align="right">الرفع :</div></td>
+			    <td>
+                <script type="text/javascript">
+                document.write(arabicBytes("$(bytes-in)"));
+                </script>
+				</td>
+				
+			  </tr>
+			  
+			  
+			   
+			
+			  <tr >
+			  	<td ><div align="right">الوقت المستهلك:</div></td>
+				<td >
+				<script type="text/javascript">
+                   document.write(arabicTime("$(uptime)"));
+                </script>
+				</td>
+				
+			  </tr>
+			  
+			   <tr >
+			   	<td ><div align="right">الوقت المتبقي:</div></td>
+				<td >
+			    $(if session-time-left)
+				<script type="text/javascript">
+                   document.write(arabicTime("$(session-time-left)"));
+                </script>
+                $(else)
+            
+				   غير محدود
+				   
+			    $(endif)
+
+				</td>
+				
+			    </tr>
+			  
+
+
+			
+			  <tr >
+			  	<td ><div align="right">الماك أدرس:</div></td>
+				<td >$(mac)</td>
+				
+			  </tr>
+			  
+			  
+
+			</table>
+			<br>
+	$(if login-by-mac != 'yes')
+	<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+	<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+	<!-- end of user manager link -->
+
+	
+
+	<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+   	<input type="hidden" name="erase-cookie" value="on">
+    <button onclick= "return delrem()" type="submit" class="logout__submit"> دخول بكرت آخر <span class="icon-disconnect" style="color:#fff;"></span></button>	
+	</form>		
+
+	$(endif)
+					
+		</div>      
+
+
+
+  </div>
+      
+    <div class="support"> <p style="margin-bottom: 0.3rem"><span style="color: #fff;" class="icon-users"></span>
+   الدعم الفني :</p>
+    <a href="tel:0567786777">0567786777 </a>
+	</div> 
+  <div class="container" style="font-size: 12px;">
+  <div class="text"></div>
+  </div> 
+      
+    </div>
+  </div>
+</div>
+   
+  <script src="js/code.js"></script>
+   <script  src="js/jquery.min.js"></script>
+
+
+
+
+</body>
+
+</html>

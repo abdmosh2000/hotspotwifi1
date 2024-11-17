@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <title>TAWASOL NET</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="img/favicon.png" />
+      <meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	   <link rel="stylesheet" type="text/css" href="css/JF-Flat-regular.css" />
+       <link rel="stylesheet" href="css/icons.css">
+       <link rel="stylesheet" href="css/style.css">
+       
+       <script  src="js/mine.js"></script>
+
+
+  
+</head>
+
+<body>
+
+
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+				var usr = document.login.username.value;
+            	usr = improveInput(usr);  
+                var pwd = document.login.password.value;
+                pwd = improveInput(pwd);
+                document.sendin.username.value = usr;
+                document.sendin.password.value = hexMD5('$(chap-id)' + pwd + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+
+
+
+
+
+  <div class="cont">
+  <div class="demo">
+    <div class="login">
+<!-- Start nav -->	
+
+	<div class="top-nav" >
+				<ul>
+	<li><a data-scroll href="price.html">قائمة الأسعار <span class="icon-stopwatch"></span></a></li>
+	<li><a data-scroll href="sellar.html">نقاط البيع<span class="icon-placepin"></span></a></li>
+
+				</ul>
+	</div>
+<!-- End nav -->  
+
+<!-- Start Clock -->	
+			<div class="clock" >
+
+				  <div id="clock" dir="rtl" align="center">
+  الساعة</div>
+				  <script type="text/javascript"> function refrClock() { var d=new Date(); var s=d.getSeconds(); var m=d.getMinutes(); var h=d.getHours(); var day=d.getDay(); var date=d.getDate(); var month=d.getMonth(); var year=d.getFullYear(); var days=new Array("","","","","","",""); var months=new Array("01","02","03","04","05","06","07","08","09","10","11","12"); var am_pm; if (s<10) {s="0" + s} if (m<10) {m="0" + m} if (h>12) {h-=12;am_pm = "  "} else {am_pm="  "} if (h<10) {h="0" + h} document.getElementById("clock").innerHTML= "     :    " + h + ":" + m + ":" + s + " " + am_pm + " - " + days[day] + " " + date + " / " + months[month] + " /" + year; setTimeout("refrClock()",1000); } refrClock(); </script>
+	</div>
+<!-- End Clock -->
+
+<!-- Start news -->
+	<div class="line " >
+			<div class="box" style="padding: 0px;" >
+
+				  <div class="l-12 s-12"  dir="rtl" align="center"  >
+		 <iframe class="price" src="news.html" style=" border-bottom:dashed 1px #ccc;   padding:5px;" width="100%" height="40px" > </iframe>
+   					</div>
+
+			</div>
+</div>
+<!-- End news -->
+
+
+
+ 
+  <div align="center"><img alt="logo" src="img/logo.png" style="max-width: 90%;" /></div>
+
+		<form name="login" action="$(link-login-only)" method="post"
+		 $(if chap-id) onSubmit="return doLogin()" $(endif) >      
+
+ 
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
+				<div align="center" style="color: #8C8C8C; font-size: 12px"> 
+				 $(if trial == 'yes')
+				<p> successfully login </p>
+<a style="color: #e61000; font-size:16px; font-weight:bold" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=Test-$(mac-esc)">wrong detail</a>$(endif)</div> 
+      
+           
+                
+                          
+       
+       <div class="login__form">
+        <div class="login__row">
+          <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+          </svg>
+          <input class="login__input name" placeholder="اسم المستخدم" id="uname" dir="rtl" onBlur="this.value=improveInput(this.value);"  name="username" type="text" value="$(username)" autocomplete="on"/>
+        </div>
+ 		<div class="login__row">
+          <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+          </svg>
+		 <input class="login__input pass" placeholder="كلمة المرور" id="paswd" dir="rtl" onBlur="this.value=improveInput(this.value);" name="password" type="password" autocomplete="on"/>
+        </div>
+         <button class="login__submit" type="Submit" name="Submit" >
+         <span class="icon-signin" style="color:#fff;"></span>
+         تسجيل الدخول
+         </button> 
+
+
+      </div>
+      
+      
+  		</form>
+
+    <div class="support"> <p style="margin-bottom: 0.3rem"><span style="color: #fff;" class="icon-users"></span>
+  الدعم الفني :</p>
+    <a href="tel:0598580035">0598580035 </a>
+	</div>
+  <div class="container" style="font-size: 12px;">
+  <div class="text"></div>
+  </div> 
+    </div>
+  </div>
+</div>
+   
+ 
+   $(if error)
+   <div id="alert-back3" onClick="document.getElementById('alert-back3').style.display = ('none')">
+   <div class="alert3">
+   <span class="closebtn3"><strong style="font-size: 2rem;">&times;</strong></span>
+   <script type="text/javascript">document.write(arabicError("$(error)")); </script>
+
+   </div>
+   </div>
+
+
+  <script src="js/code.js"></script>
+  <script  src="js/jquery.min.js"></script>
+
+
+
+
+<!-- Start Mikrotik script -->	  
+	  <script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+<!-- End Mikrotik script -->
+</body>
+
+
+</html>
